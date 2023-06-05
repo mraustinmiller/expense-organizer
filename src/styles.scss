@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+@import "styling/index";
+
+body {
+  margin: 0;
+  padding: 0;
+
+  background: var(--background-primary);
+  font-family: var(--font-family-primary);
+  color: var(--font-color-primary);
+}

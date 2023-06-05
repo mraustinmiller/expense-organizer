@@ -1,0 +1,12 @@
+:host {
+  .floating-bar {
+    position: fixed;
+    top: auto;
+    left: 0;
+    right: 0;
+    bottom: var(--spacing-8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

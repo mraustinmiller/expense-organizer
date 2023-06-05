@@ -1,0 +1,71 @@
+$mobile-width: 425px;
+$tablet-width: 768px;
+$desktop-width: 1024px;
+
+$spacing: 4px;
+$sides: (top, bottom, left, right); // Leave this variable alone
+$axis: (h, v); // Leave this variable alone
+
+body {
+  @for $i from 0 through 15 {
+    --spacing-#{$i}: #{$spacing * $i};
+
+    .margin-#{$i} {
+      margin: $spacing * $i;
+    }
+
+    .padding-#{$i} {
+      padding: $spacing * $i;
+    }
+
+    @each $side in $sides {
+      .margin-#{$side}-#{$i} {
+        margin-#{$side}: $spacing * $i;
+      }
+
+      .padding-#{$side}-#{$i} {
+        padding-#{$side}: $spacing * $i;
+      }
+    }
+
+    @each $a in $axis {
+      .margin-#{$a}-#{$i} {
+        @if $a == h {
+          margin-left: $spacing * $i;
+          margin-right: $spacing * $i;
+        } @else if $a == v {
+          margin-top: $spacing * $i;
+          margin-bottom: $spacing * $i;
+        }
+      }
+
+      .padding-#{$a}-#{$i} {
+        @if $a == h {
+          padding-left: $spacing * $i;
+          padding-right: $spacing * $i;
+        } @else if $a == v {
+          padding-top: $spacing * $i;
+          padding-bottom: $spacing * $i;
+        }
+      }
+    }
+  }
+}
+
+@mixin mobile {
+  @media (max-width: #{$tablet-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}

@@ -1,0 +1,17 @@
+body {
+  --font-size-xsmall: 10px;
+  --font-size-small: 12px;
+  --font-size-medium: 16px;
+  --font-size-large: 24px;
+  --font-size-xlarge: 32px;
+  --font-size-xxlarge: 48px;
+  --font-size-xxxlarge: 60px;
+
+  --paragraph-indent: 24px;
+}
+
+p,
+li {
+  line-height: 2;
+  font-size: var(--font-size-medium);
+}

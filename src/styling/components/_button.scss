@@ -1,0 +1,14 @@
+button:not(.nav) {
+  background: linear-gradient(
+    to right,
+    var(--brand-primary),
+    var(--brand-secondary)
+  );
+
+  padding: var(--spacing-3) var(--spacing-5);
+  color: var(--brand-dark);
+  font-weight: bold;
+  border: none;
+  border-radius: 9999px;
+  font-size: var(--font-size-medium);
+}
